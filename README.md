@@ -22,11 +22,10 @@ Steps for installation:
 
 behave ./features
 
-Feature 
+# Feature 
 
 There is a single feature file with 2 scenarios :
 
-# Created by Oem at 19/04/2020
 Feature: To scrape the world indices from the yahoo finance page
 
   Scenario Outline: scrape a named index
