@@ -1,13 +1,21 @@
 # Yahoo World Indices Scraper
 
-This is a demo project that uses python - request and behave to scrape the world indices published by yahoo finance.
+This is a demo project that uses python - request and behave to scrape the world indices published by yahoo finance.This is a demo to demonstrate the skills I have for scraping. This code is not to be used for any reason commercial or personally other than to demonstrate the approach to scraping.
 
 Requirements to run :
 
 Python 3.7 above
+
 behave==1.2.6
+
 requests==2.23.0
+
 lxml==4.5.0
+
+idna==2.9
+
+urlib3==1.25.9
+
 
 Steps for installation:
 
