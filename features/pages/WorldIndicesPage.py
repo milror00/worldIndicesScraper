@@ -10,14 +10,6 @@ from lxml import html
 
 class WorldIndicesPage(Page):
 
-    def __getTableRowByIndexSymbol__(self, context, symbol):
-        rows = self.__getAllTableRows__(context)
-        index = {}
-        for row in rows:
-            index = self.__getRowIndex(row)
-            if (index['symbol'] == symbol):
-                return index
-        return index
 
     def getWorldIndexDataBySymbol(self, context, symbol):
         index = self.__getTableRowByIndexSymbol__(context, symbol)
@@ -27,17 +19,11 @@ class WorldIndicesPage(Page):
         rows = self.__getAllTableRows__(context)
         index = {}
         for row in rows:
-            index = self.__getRowIndex(row)
+            index = self.__getRowIndex__(row)
             context.indices.append(index)
 
-    def __getAllTableRows__(self, context):
-        dom = lxml.html.parse(BytesIO(context.response.data))
-        # all table rows
-        xpatheval = etree.XPathDocumentEvaluator(dom)
-        rows = xpatheval('//table/tbody/tr')
-        return rows
 
-    def __getRowIndex(self, row):
+    def __getRowIndex__(self, row):
         index = {}
         columns0 = row.findall("td/a")
         columns1 = row.findall("td")
